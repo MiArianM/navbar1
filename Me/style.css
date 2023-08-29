@@ -66,19 +66,14 @@ ul {
     justify-content: space-between;
     height: 20px;
     width: 25px;
-    margin-right: 10px;
+    margin-right: 1rem;
 }
 
 .bar {
     width: 25px;
-    height: 3px;
+    height: 2px;
     background-color: black;
-    transition: background-color 0.3s ease;
-}
-
-/* Mobile Menu Icon Animation */
-.mobile-menu-icon .bar {
-    transition: background-color 0.3s ease;
+    transition: background-color 1s ease;
 }
 
 /* Rotate Animation for Bars */
@@ -96,26 +91,27 @@ ul {
         transform: translateY(0) rotate(0);
     }
     100% {
-        transform: translateY(-8px) rotate(-45deg);
+        transform: translate(15rem,-4rem) rotate(-0.5deg);
+        
     }
 }
 
 /* Close Button Styles */
-.close-menu {
+.close-menu {   
     display: none;
     cursor: pointer;
     flex-direction: column;
     justify-content: space-between;
     height: 20px;
     width: 25px;
-    margin-right: 10px;
+    margin-right: 1rem;
 }
 
 .close-menu .bar {
     width: 25px;
     height: 3px;
     background-color: black;
-    transition: background-color 0.3s ease;
+    transition: background-color 1s ease;
 }
 
 /* Show the close button when the menu is active */
@@ -143,6 +139,9 @@ ul {
     .mobile-menu-icon {
         display: flex;
     }
+    .close-menu{
+        display: flex;
+    }
 
     .group-icons ul {
         display: none;
@@ -160,7 +159,7 @@ ul {
         display: flex;
         opacity: 1;
         transform: translateY(0);
-        animation: fadeInDown 0.3s ease forwards;
+        animation: fadeInDown 0.5s ease forwards;
     }
 
     .group-icons ul li {
@@ -174,12 +173,13 @@ ul {
 
     /* Apply animations to mobile menu icon */
     .mobile-menu-icon.active .bar:nth-child(1) {
-        animation: rotateTop 0.3s ease forwards;
+        animation: rotateTop 1s ease forwards;
     }
 
     .mobile-menu-icon.active .bar:nth-child(3) {
-        animation: rotateBottom 0.3s ease forwards;
+        animation: rotateBottom 1s ease forwards;
     }
+
 
     /* Animation for dropdown menu */
     @keyframes fadeInDown {
@@ -189,7 +189,7 @@ ul {
         }
         100% {
             opacity: 1;
-            transform: translateY(0);
+            transform: translate(-2rem,-3.6rem);
         }
     }
 }
