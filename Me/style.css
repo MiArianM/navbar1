@@ -100,6 +100,29 @@ ul {
     }
 }
 
+/* Close Button Styles */
+.close-menu {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20px;
+    width: 25px;
+    margin-right: 10px;
+}
+
+.close-menu .bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    transition: background-color 0.3s ease;
+}
+
+/* Show the close button when the menu is active */
+.group-icons ul.active + .close-menu {
+    display: flex;
+}
+
 /* Media Query for Mobile Responsiveness */
 @media screen and (max-width: 768px) {
     .nav-bar {
