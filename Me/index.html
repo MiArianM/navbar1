@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NavBar1</title>
     <link href="style.css" rel="stylesheet" />
 </head>
+
 <body>
     <div class="container">
         <div class="nav-bar">
@@ -22,6 +24,11 @@
             </div>
             <div class="group-icons">
                 <ul>
+                    <div class="close-menu" onclick="toggleMobileMenu()">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
                     <li><a href="#">Dashboard</a></li>
                     <li><a href="#">Profile</a></li>
                     <li><a href="#">Messages</a></li>
@@ -29,8 +36,11 @@
                     <li><a href="#">Login</a></li>
                 </ul>
             </div>
+            <!-- Add close button -->
+
         </div>
     </div>
     <script src="./index.js"></script>
 </body>
+
 </html>
