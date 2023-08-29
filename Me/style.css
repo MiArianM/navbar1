@@ -73,7 +73,31 @@ ul {
     width: 25px;
     height: 3px;
     background-color: black;
-    transition: background-color 0.3s ease; /* Added for background color transition */
+    transition: background-color 0.3s ease;
+}
+
+/* Mobile Menu Icon Animation */
+.mobile-menu-icon .bar {
+    transition: background-color 0.3s ease;
+}
+
+/* Rotate Animation for Bars */
+@keyframes rotateTop {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    100% {
+        transform: translateY(8px) rotate(45deg);
+    }
+}
+
+@keyframes rotateBottom {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    100% {
+        transform: translateY(-8px) rotate(-45deg);
+    }
 }
 
 /* Media Query for Mobile Responsiveness */
@@ -82,7 +106,8 @@ ul {
         flex-direction: column;
     }
 
-    .logo, .group-icons {
+    .logo,
+    .group-icons {
         width: 100%;
         text-align: center;
         padding: 1rem 0;
@@ -92,22 +117,6 @@ ul {
         height: auto;
     }
 
-    /* Mobile Menu Icon Animation */
-    .mobile-menu-icon .bar {
-        transition: background-color 0.3s ease;
-    }
-
-    .mobile-menu-icon.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
-        transition: transform 0.3s ease;
-    }
-
-    .mobile-menu-icon.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
-        transition: transform 0.3s ease;
-    }
-
-    /* Mobile Menu Styles */
     .mobile-menu-icon {
         display: flex;
     }
@@ -122,15 +131,13 @@ ul {
         border-radius: 10px;
         box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
         z-index: 1;
-        opacity: 0; /* Added opacity for transition */
-        transform: translateY(-10px); /* Added initial transform for transition */
-        transition: opacity 0.3s ease, transform 0.3s ease;
     }
 
     .group-icons ul.active {
         display: flex;
         opacity: 1;
         transform: translateY(0);
+        animation: fadeInDown 0.3s ease forwards;
     }
 
     .group-icons ul li {
@@ -142,23 +149,24 @@ ul {
         background-color: #333;
     }
 
-    .group-icons ul {
-        display: none;
-    }
-
-    .group-icons ul.active {
-        display: flex;
-    }
-
-    .mobile-menu-icon.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
+    /* Apply animations to mobile menu icon */
     .mobile-menu-icon.active .bar:nth-child(1) {
-        transform: translateY(8px) rotate(45deg);
+        animation: rotateTop 0.3s ease forwards;
     }
 
     .mobile-menu-icon.active .bar:nth-child(3) {
-        transform: translateY(-8px) rotate(-45deg);
+        animation: rotateBottom 0.3s ease forwards;
+    }
+
+    /* Animation for dropdown menu */
+    @keyframes fadeInDown {
+        0% {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 }
