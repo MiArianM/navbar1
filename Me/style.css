@@ -82,7 +82,7 @@ ul {
         transform: translateY(0) rotate(0);
     }
     100% {
-        transform: translateY(8px) rotate(45deg);
+        transform: translateY(2px) rotate(360deg);
     }
 }
 
@@ -91,7 +91,7 @@ ul {
         transform: translateY(0) rotate(0);
     }
     100% {
-        transform: translate(15rem,-4rem) rotate(-0.5deg);
+        transform: translate(1rem,0.10rem) rotate(0deg);
         
     }
 }
@@ -111,9 +111,9 @@ ul {
 }
 
 .close-menu.active {
-    display: flex;
     opacity: 1;
-    transform: translateY(0);
+    transform: translate(2rem,0rem);
+    position: absolute;
 }
 
 .close-menu .bar {
@@ -125,7 +125,7 @@ ul {
 
 
 /* Show the close button when the menu is active */
-.group-icons ul.active + .close-menu {
+.group-icons ul.active + .close-menu.active {
     display: flex;
 }
 
@@ -146,17 +146,14 @@ ul {
         height: auto;
     }
 
-    .mobile-menu-icon {
-        display: flex;
-    }
-    .close-menu{
+    .mobile-menu-icon , .close-menu {
         display: flex;
     }
 
     .group-icons ul {
         display: none;
         flex-direction: column;
-        position: absolute;
+        
         top: 60px;
         background-color: white;
         width: 100%;
@@ -169,7 +166,7 @@ ul {
         display: flex;
         opacity: 1;
         transform: translateY(0);
-        animation: fadeInDown 0.5s ease forwards;
+        animation: fadeInDown 0.7s ease forwards;
     }
 
     .group-icons ul li {
@@ -182,12 +179,16 @@ ul {
     }
 
     /* Apply animations to mobile menu icon */
-    .mobile-menu-icon.active .bar:nth-child(1) {
+
+    .close-menu.active .bar:nth-child(1) {
         animation: rotateTop 1s ease forwards;
     }
-
-    .mobile-menu-icon.active .bar:nth-child(3) {
+    .close-menu.active .bar:nth-child(2) {
         animation: rotateBottom 1s ease forwards;
+    }
+
+    .close-menu.active .bar:nth-child(3) {
+        animation: rotateTop 1s ease forwards;
     }
 
 
